@@ -1,27 +1,27 @@
 const partners = [
     {
         id: 1,
-        logo: '../media/images/edm-council.svg',
+        logo: 'media/images/edm-council.svg',
         description: '<span>EDM Council</span> is the member-driven trade association dedicated to elevating data management and analytics as a strategic business priority. Founded in 2005, we provide best practices, standards and education to data & business professionals in our data-driven world.'
     },
     {
         id: 2,
-        logo: '../media/images/fast.svg',
+        logo: 'media/images/fast.svg',
         description: '<span>FAST</span> is a pioneer in the field of digital security and surveillance technologies and is revolutionizing the way organizations and governments protect people, property and assets. The core R&D team of FAST comprises the combined experience of over 150 man-years and 500 000 installed video channels in over 15 000 installations worldwide.'
     },
     {
         id: 3,
-        logo: '../media/images/isentry.svg',
+        logo: 'media/images/isentry.svg',
         description: '<span>intelexVision</span> delivers a complete, end-to-end solution, enabling effective real-time monitoring of video at scale. Our analytics autonomously monitor and interpret massive amounts of video footage in an unbiased, unsupervised way, using AI to ‘understand’ and learn from any monitored scene, generating critical triggers that alert operators to real and ongoing potential risks.'
     },
     {
         id: 4,
-        logo: '../media/images/consquare.svg',
+        logo: 'media/images/consquare.svg',
         description: "<span>Consquare Consultancy</span> stands as a premier independent consultancy service firm. Our seasoned team collaborates with global business partners, offering a comprehensive range of multi-disciplinary consulting services. What began as a modest team tackling significant challenges has now flourished into one of the UAE's most proactive consultancy firms, expanding its reach both locally and internationally."
     },
     {
         id: 5,
-        logo: '../media/images/dell.svg',
+        logo: 'media/images/dell.svg',
         description: '<span>Dell</span> is an American technology company that develops, sells, repairs, and supports computers and related products and services. Dell is owned by its parent company, Dell Technologies.'
     },
 ];
@@ -54,49 +54,49 @@ const services = [
 const companies = [
     {
         id: 1,
-        logo: '../media/images/company-1.svg',
+        logo: 'media/images/company-1.svg',
         title: "MOC",
         about: "The Ministry of Commerce seeks to play a pivotal role in the growth and sustainability of the Kingdom's commercial sector and to keep up with the ever-evolving changes and developments in trade globally. The Ministry aims to strengthen the Kingdom's economic position as a preferred hub for trade in the Middle East and around the world.  Providing a comprehensive and integrated road map to fulfill its ambitious objective of leading the Saudi trading sector in a fair and stimulating environment. The Ministry's message centers around the crucial role it has been playing in enhancing the business climate in the Kingdom through the adoption, development, and oversight of flexible and fair commercial laws regulations, and policies, as well as the strengthening of strategic alliances with various relevant local and international authorities in order to strengthen the bonds of trust between the seller and the customer. By adhering to an integrated system of established values that place an emphasis on justice, respect for rights, creativity, teamwork, speed of response, and a constant effort to provide value-added services that exceed the expectations of all categories of customers, it helps to maximize the contribution of the commercial sector to the support and sustainability of the national economy.​"
     },
     {
         id: 2,
-        logo: '../media/images/company-2.svg',
+        logo: 'media/images/company-2.svg',
         title: "MOT",
         about: "The Ministry of Tourism started operations in 2000, focusing on long-term growth. Its main objective is to implement the kingdom's vision for tourism, along with facilitating successful collaborations and developing national human capital."
     },
     {
         id: 3,
-        logo: '../media/images/company-3.svg',
+        logo: 'media/images/company-3.svg',
         title: "NG",
         about: "The National Guard is an armed military force that contributes to defending the lands and borders of the Kingdom of Saudi Arabia and maintaining internal security and stability."
     },
     {
         id: 4,
-        logo: '../media/images/company-4.svg',
+        logo: 'media/images/company-4.svg',
         title: "SBA",
         about: "The Saudi Radio and Television Corporation is a Saudi government body that has a legal personality and financial independence affiliated with the Saudi Ministry of Information. It seeks to convey the message of the Kingdom of Saudi Arabia to all regions locally and globally through word and image, and to raise and develop the level of radio and television performance. It has several governmental and official television and radio channels, namely the Saudi Channel, the SBC Channel, the Memories Channel, the News Channel, the Saudi Sports Channels, the Holy Quran Channel, and the Prophet’s Sunnah Channel. Among the radio stations are the Holy Quran Radio, Jeddah Radio, Riyadh Radio, Call of Islam Radio, and Saudi Radio Radio. And Saudi international radio."
     },
     {
         id: 5,
-        logo: '../media/images/company-5.svg',
+        logo: 'media/images/company-5.svg',
         title: "MOMRAH",
         about: "The Ministry Of Municipal And Rural Affairs Was Established In 1395 AH / 1975 AD By Royal Decree No. (A/266) Dated 8/10/1395 AH And Was Entrusted With The Responsibility Of Urban Planning For The Cities Of The Kingdom, And What This Entails In Providing Roads And Basic Equipment, Improving And Beautifying Cities & Developing Municipal And Rural Areas In Addition To To The Management Of The Services Necessary To Maintain The Cleanliness And Health Of The Environment In The Kingdom."
     },
     {
         id: 6,
-        logo: '../media/images/company-6.svg',
+        logo: 'media/images/company-6.svg',
         title: "MOH",
         about: "Since the founding of Saudi Arabia by King Abdul Aziz, public health has been a top priority. In 1925, he established the Public Health Department in Makkah, building a solid healthcare infrastructure with international cooperation. To manage growing healthcare demands, including for Hajj and Umrah, the Public Health Council was formed. In 1951, the Ministry of Health was established by Royal Decree, realizing King Abdul Aziz’s vision for a comprehensive national healthcare system."
     },
     {
         id: 7,
-        logo: '../media/images/company-7.svg',
+        logo: 'media/images/company-7.svg',
         title: "MRM",
         about: "The Medina Region Municipality is responsible for providing municipal services with the aim of developing and improving the region in terms of urban, economic and social aspects. In the year 1401 AH, a royal decree was issued to change the name of the city municipality to “the Municipality of Medina,” following a ministerial decision in 1398 that classified the municipality as an excellent category. The secretariat is concerned with multiple tasks such as maintaining cleanliness, combating public health pests, monitoring commercial activities and ensuring food safety, in addition to maintaining roads and lighting, establishing building regulations, and supervising the provision of municipal services to residents and visitors of Medina."
     },
     {
         id: 8,
-        logo: '../media/images/company-8.svg',
+        logo: 'media/images/company-8.svg',
         title: "MOHRSD",
         about: "The Ministry of Human Resources and Social Development is the government body that is responsible for establishing general policy for labor and workers laws in both public and private sectors inside the Kingdom of Saudi Arabia, as well as all matters relating to social affairs and its development programs which conform with the visions and policies adopted by the Kingdom’s government."
     }
@@ -106,37 +106,37 @@ const objectives = [
         id: 1,
         title: 'Helping<br>organizations',
         description: "in realizing the real data values that include data monetization and operations optimization.",
-        icon: '../media/icons/hand-salute.svg'
+        icon: 'media/icons/hand-salute.svg'
     },
     {
         id: 2,
         title: 'Assisting<br>organizations',
         description: "to build data-driven culture by following best practices in managing their data assets.",
-        icon: '../media/icons/gear.svg'
+        icon: 'media/icons/gear.svg'
     },
     {
         id: 3,
         title: 'Transform<br>organizations',
         description: "in dealing with data as a strategic asset that requires special attention to create values for the organizations.",
-        icon: '../media/icons/users-connection.svg'
+        icon: 'media/icons/users-connection.svg'
     },
     {
         id: 4,
         title: 'Support<br>building',
         description: "governance bodies to comply with the related regulations and standards.",
-        icon: '../media/icons/headset.svg'
+        icon: 'media/icons/headset.svg'
     },
     {
         id: 5,
         title: 'Building<br>business',
         description: "intelligence capabilities for organizations through expert teams that have required the skills and experiences.",
-        icon: '../media/icons/hand-salute.svg'
+        icon: 'media/icons/hand-salute.svg'
     },
     {
         id: 6,
         title: 'Helping<br>organizations',
         description: "in realizing the real data values that include data monetization and operations optimization.",
-        icon: '../media/icons/gear.svg'
+        icon: 'media/icons/gear.svg'
     },
 ];
 
@@ -195,19 +195,19 @@ function dispalyServices(){
                     <p>${services[i].description}</p>
                     <ul>
                         <li class="d-flex align-items-center">
-                            <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                             <span>Align data strategy with business strategy</span>
                         </li>
                         <li class="d-flex align-items-center">
-                            <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                             <span>Compliance with NDMO requirements</span>
                         </li>
                         <li class="d-flex align-items-center">
-                            <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                             <span>Professional Advice</span>
                         </li>
                         <li class="d-flex align-items-center mb-0">
-                            <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                             <span>Helps to harness information to drive business insights</span>
                         </li>
                     </ul>
@@ -243,19 +243,19 @@ function displayCompanies(){
             <p>Our team members had collaborated with ${companies[indexCompanies].title} within many aspects as follows:</p>
             <ul>
                 <li class="d-flex align-items-center">
-                    <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                    <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                     <span> Align data strategy with business strategy along over than 35 different projects ins KSA</span>
                 </li>
                 <li class="d-flex align-items-center">
-                    <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                    <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                     <span> Compliance with NDMO requirements with many organizations that can affect real world technology</span>
                 </li>
                 <li class="d-flex align-items-center">
-                    <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                    <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                     <span>Professional Advice along over than 35 different projects ins KSA</span>
                 </li>
                 <li class="d-flex align-items-center mb-0">
-                    <img loading="lazy" src="../media/icons/caret-right.svg" alt="D4Ds">
+                    <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
                     <span> Align data strategy with business strategy along over than 35 different projects ins KSA</span>
                 </li>
             </ul>
