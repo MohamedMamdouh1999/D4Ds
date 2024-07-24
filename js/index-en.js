@@ -328,26 +328,49 @@ function displayCurrentItem(index, label){
 };
 
 $(document).ready(_ => $(".owl-carousel").owlCarousel());
-$('.owl-carousel.owl-carousel-about-us').owlCarousel({
-    margin: -120,
-    nav: true,
-    loop: true,
-    dots: false,
-    rtl: false,
-    center: true,
-    autoplay: true,
-    mouseDrag: false,
-    smartSpeed: 1000,
-    autoplayTimeout: 10000,
-    responsive:{
-        0:{
-            items: 1
-        },
-        768:{
-            items: 2
+if(window.innerWidth >= 1400) {
+    $('.owl-carousel.owl-carousel-about-us').owlCarousel({
+        margin: -120,
+        nav: true,
+        rtl: false,
+        loop: true,
+        dots: false,
+        center: true,
+        autoplay: true,
+        mouseDrag: false,
+        smartSpeed: 1000,
+        autoplayTimeout: 10000,
+        responsive:{
+            0:{
+                items: 1
+            },
+            768:{
+                items: 2
+            }
         }
-    }
-});
+    });
+} else {
+    $('.owl-carousel.owl-carousel-about-us').owlCarousel({
+        margin: 0,
+        nav: true,
+        rtl: false,
+        loop: true,
+        dots: false,
+        center: true,
+        autoplay: true,
+        mouseDrag: false,
+        smartSpeed: 1000,
+        autoplayTimeout: 10000,
+        responsive:{
+            0:{
+                items: 1
+            },
+            768:{
+                items: 2
+            }
+        }
+    });
+}
 
 const myModal = document.getElementById('myModal');
 const myInput = document.getElementById('myInput');
