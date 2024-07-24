@@ -282,42 +282,54 @@ function displayObjectives(){
     document.querySelector('#objectives .row').innerHTML = content;
 };
 
+let partnersInterval = setClearInterval('partners', partners, 4000);
+let servicesInterval = setClearInterval('services', services, 6000);
+let companiesInterval = setClearInterval('companies', companies, 8000);
+let objectivesInterval = setClearInterval('objectives', objectives, 4000);
+function setClearInterval(label, data, duration) {
+    return setInterval(_ => {
+        if(label === 'partners'){
+            indexPartners = indexPartners < data.length - 1 ? indexPartners + 1 : 0;
+            displayPartners();
+        } else if(label === 'services'){
+            indexServices = indexServices < data.length - 1 ? indexServices + 1 : 0;
+            dispalyServices();
+        } else if(label === 'companies'){
+            indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
+            displayCompanies();
+        } else if(label === 'objectives'){
+            indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
+            displayObjectives();
+        }
+    }, duration);
+}
 function displayCurrentItem(index, label){
     if(label === 'partners'){
+        clearInterval(partnersInterval);
         indexPartners = index;
         displayPartners();
+        partnersInterval = setClearInterval('partners', partners, 4000);
     } else if(label === 'services'){
+        clearInterval(servicesInterval);
         indexServices = index;
         dispalyServices();
+        servicesInterval = setClearInterval('services', services, 6000);
     } else if(label === 'companies'){
+        clearInterval(companiesInterval);
         indexCompanies = index;
         displayCompanies();
+        companiesInterval = setClearInterval('companies', companies, 8000);
     } else if(label === 'objectives'){
+        clearInterval(objectivesInterval);
         indexObjectives = index;
         displayObjectives();
+        objectivesInterval = setClearInterval('objectives', objectives, 4000);
     }
 };
 
-setInterval(_ => {
-    indexPartners = indexPartners < partners.length - 1 ? indexPartners + 1 : 0;
-    displayPartners();
-}, 4000);
-setInterval(_ => {
-    indexServices = indexServices < services.length - 1 ? indexServices + 1 : 0;
-    dispalyServices();
-}, 6000);
-setInterval(_ => {
-    indexCompanies = indexCompanies < companies.length - 1 ? indexCompanies + 1 : 0;
-    displayCompanies();
-}, 8000);
-setInterval(_ => {
-    indexObjectives = indexObjectives < objectives.length - 1 ? indexObjectives + 1 : 0;
-    displayObjectives();
-}, 4000);
-
 $(document).ready(_ => $(".owl-carousel").owlCarousel());
 $('.owl-carousel.owl-carousel-about-us').owlCarousel({
-    margin: 0,
+    margin: -120,
     nav: true,
     loop: true,
     dots: false,
@@ -325,7 +337,8 @@ $('.owl-carousel.owl-carousel-about-us').owlCarousel({
     center: true,
     autoplay: true,
     mouseDrag: false,
-    autoplayTimeout: 6000,
+    smartSpeed: 1000,
+    autoplayTimeout: 10000,
     responsive:{
         0:{
             items: 1
