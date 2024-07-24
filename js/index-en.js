@@ -1,27 +1,27 @@
 const partners = [
     {
         id: 1,
-        logo: './media/images/edm-council.svg',
+        logo: 'media/images/edm-council.svg',
         description: '<span>EDM Council</span> is the member-driven trade association dedicated to elevating data management and analytics as a strategic business priority. Founded in 2005, we provide best practices, standards and education to data & business professionals in our data-driven world.'
     },
     {
         id: 2,
-        logo: './media/images/fast.svg',
+        logo: 'media/images/fast.svg',
         description: '<span>FAST</span> is a pioneer in the field of digital security and surveillance technologies and is revolutionizing the way organizations and governments protect people, property and assets. The core R&D team of FAST comprises the combined experience of over 150 man-years and 500 000 installed video channels in over 15 000 installations worldwide.'
     },
     {
         id: 3,
-        logo: './media/images/isentry.svg',
+        logo: 'media/images/isentry.svg',
         description: '<span>intelexVision</span> delivers a complete, end-to-end solution, enabling effective real-time monitoring of video at scale. Our analytics autonomously monitor and interpret massive amounts of video footage in an unbiased, unsupervised way, using AI to ‘understand’ and learn from any monitored scene, generating critical triggers that alert operators to real and ongoing potential risks.'
     },
     {
         id: 4,
-        logo: './media/images/consquare.svg',
+        logo: 'media/images/consquare.svg',
         description: "<span>Consquare Consultancy</span> stands as a premier independent consultancy service firm. Our seasoned team collaborates with global business partners, offering a comprehensive range of multi-disciplinary consulting services. What began as a modest team tackling significant challenges has now flourished into one of the UAE's most proactive consultancy firms, expanding its reach both locally and internationally."
     },
     {
         id: 5,
-        logo: './media/images/dell.svg',
+        logo: 'media/images/dell.svg',
         description: '<span>Dell</span> is an American technology company that develops, sells, repairs, and supports computers and related products and services. Dell is owned by its parent company, Dell Technologies.'
     },
 ];
