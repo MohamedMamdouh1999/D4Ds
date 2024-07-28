@@ -805,12 +805,13 @@ main section {
             .owl-stage {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 .owl-item {
+                    padding-inline: 12px;
                     .about-us-card {
                         padding: 20px;
                         position: relative;
                         border-radius: 20px;
-                        margin-inline: 12px;
                         background-color: #FAFAFA;
                         p {
                             font-size: 18px;
@@ -892,9 +893,12 @@ main section {
                 .owl-carousel-about-us {
                     padding-top: 55px;
                     .owl-stage .owl-item {
+                        display: flex;
+                        align-items: center;
                         padding-bottom: 25px;
+                        justify-content: center;
+                        padding-inline: calc((2.01 - 100vw) / 100);
                         .about-us-card {
-                            margin-inline: 15px;
                             padding: 29px 28px 27px 33px;
                             p {
                                 font-size: 22px;
@@ -912,21 +916,23 @@ main section {
                                 font-size: 18px;
                             }
                         }
-                        &.active.center .about-us-card {
-                            margin-inline: auto;
-                            padding: 40px 33px 26px 35px;
-                            p {
-                                font-size: 26px;
-                                margin-bottom: 32px;
-                            }
-                            > img {
-                                width: 150px;
-                                height: 100px;
-                                right: -10px;
-                                bottom: -10px;
-                                &.ar {
-                                    left: -10px;
-                                    right: unset;
+                        &.active.center {
+                            width: calc((37.01 * 100vw) / 100) !important;
+                            .about-us-card {
+                                padding: 40px 33px 26px 35px;
+                                p {
+                                    font-size: 26px;
+                                    margin-bottom: 32px;
+                                }
+                                > img {
+                                    width: 120px;
+                                    height: 80px;
+                                    right: -10px;
+                                    bottom: -10px;
+                                    &.ar {
+                                        left: -10px;
+                                        right: unset;
+                                    }
                                 }
                             }
                         }
@@ -947,17 +953,14 @@ main section {
             
         }
         @media screen and (min-width: 1200px) {
-            & .owl-carousel-about-us .owl-stage .owl-item.active.center .about-us-card {
-                width: 533px;
-                > img {
-                    width: 175px;
-                    height: 125px;
-                    right: -25px;
-                    bottom: -25px;
-                    &.ar {
-                        left: -25px;
-                        right: unset;
-                    }
+            & .owl-carousel-about-us .owl-stage .owl-item.active.center .about-us-card > img {
+                width: 175px;
+                height: 125px;
+                right: -25px;
+                bottom: -25px;
+                &.ar {
+                    left: -25px;
+                    right: unset;
                 }
             }
         }
