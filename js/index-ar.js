@@ -374,7 +374,7 @@ if(window.innerWidth >= 1400) {
 
 const myModal = document.getElementById('myModal');
 const myInput = document.getElementById('myInput');
-myModal.addEventListener('shown.bs.modal', () => myInput.focus());
+if (myModal) myModal.addEventListener('shown.bs.modal', () => myInput.focus());
 
 function hideError(errorElement) {
     document.getElementById(errorElement).textContent = "";
