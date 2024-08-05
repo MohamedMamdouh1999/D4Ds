@@ -171,6 +171,7 @@ main section {
             background-color: #FAFAFA;
             border: 1px solid #2E2E1F1F;
             transition: filter 0.3s ease-out;
+            &.active,
             &:hover {
                 filter: drop-shadow(0px 8px 19px rgba(0, 0, 0, 0.05)) drop-shadow(0px 34px 34px rgba(0, 0, 0, 0.04)) drop-shadow(0px 76px 46px rgba(0, 0, 0, 0.03)) drop-shadow(0px 136px 54px rgba(0, 0, 0, 0.01)) drop-shadow(0px 212px 59px rgba(0, 0, 0, 0.00));
             }
@@ -377,12 +378,15 @@ main section {
                     font-weight: 700;
                     color: #1B1B1B;
                 }
-                p {
-                    font-size: 18px;
-                    color: #474747;
-                    margin-block: 8px 16px;
-                    span {
-                        font-weight: 600;
+                .owl-item {
+                    padding: 0 5px 5px;
+                    p {
+                        font-size: 18px;
+                        color: #474747;
+                        margin-block: 8px 16px;
+                        span {
+                            font-weight: 600;
+                        }
                     }
                 }
             }
@@ -1278,6 +1282,9 @@ footer {
             }
         }
     }
+}
+.owl-dots {
+    height: 0;
 }
 @keyframes img-move-up {
     0% {

@@ -1,30 +1,3 @@
-const partners = [
-    {
-        id: 1,
-        logo: 'media/images/edm-council.svg',
-        description: '<span>EDM Council</span> is the member-driven trade association dedicated to elevating data management and analytics as a strategic business priority. Founded in 2005, we provide best practices, standards and education to data & business professionals in our data-driven world.'
-    },
-    {
-        id: 2,
-        logo: 'media/images/fast.svg',
-        description: '<span>FAST</span> is a pioneer in the field of digital security and surveillance technologies and is revolutionizing the way organizations and governments protect people, property and assets. The core R&D team of FAST comprises the combined experience of over 150 man-years and 500 000 installed video channels in over 15 000 installations worldwide.'
-    },
-    {
-        id: 3,
-        logo: 'media/images/isentry.svg',
-        description: '<span>intelexVision</span> delivers a complete, end-to-end solution, enabling effective real-time monitoring of video at scale. Our analytics autonomously monitor and interpret massive amounts of video footage in an unbiased, unsupervised way, using AI to ‘understand’ and learn from any monitored scene, generating critical triggers that alert operators to real and ongoing potential risks.'
-    },
-    {
-        id: 4,
-        logo: 'media/images/consquare.svg',
-        description: "<span>Consquare Consultancy</span> stands as a premier independent consultancy service firm. Our seasoned team collaborates with global business partners, offering a comprehensive range of multi-disciplinary consulting services. What began as a modest team tackling significant challenges has now flourished into one of the UAE's most proactive consultancy firms, expanding its reach both locally and internationally."
-    },
-    {
-        id: 5,
-        logo: 'media/images/dell.svg',
-        description: '<span>Dell</span> is an American technology company that develops, sells, repairs, and supports computers and related products and services. Dell is owned by its parent company, Dell Technologies.'
-    },
-];
 const services = [
     {
         id: 1,
@@ -140,10 +113,21 @@ const objectives = [
     },
 ];
 
+const whyUsCards = document.querySelectorAll('.info-card');
+const partnerCards = document.querySelectorAll('.partner-card');
+
+let partnersDots = [];
+
+let indexWhyUs = 0;
 let indexPartners = 0;
 let indexServices = 0;
 let indexCompanies = 0;
 let indexObjectives = 0;
+
+let partnersInterval = setClearInterval('partners', partnerCards, 5000);
+let servicesInterval = setClearInterval('services', services, 6000);
+let companiesInterval = setClearInterval('companies', companies, 8000);
+let objectivesInterval = setClearInterval('objectives', objectives, 4000);
 
 let date = new Date();
 let options = {
@@ -155,35 +139,127 @@ let options = {
 let hijriDate = date.toLocaleDateString('en-u-ca-islamic', options);
 document.querySelector('.timeline-en').innerHTML = `${hijriDate} | Riyadh Time ${date.getHours()}:${date.getMinutes()} ${date.getHours() >= 12 ? 'PM' : 'AM'}`;
 
-displayPartners();
+const myModal = document.getElementById('myModal');
+const myInput = document.getElementById('myInput');
+if (myModal) myModal.addEventListener('shown.bs.modal', () => myInput.focus());
+
+whyUsCards.forEach(item => {
+    item.addEventListener("mouseenter", _ => {
+        whyUsCards.forEach(item => item.classList.remove("active"));
+        item.classList.add("active");
+    })
+    item.addEventListener("mouseleave", _ => {
+        item.classList.remove("active");
+        whyUsCards[indexWhyUs].classList.add("active");
+    })
+});
+setInterval(_ => {
+    whyUsCards.forEach(item => item.classList.remove("active"));
+    indexWhyUs = indexWhyUs < 3 ? indexWhyUs + 1 : 0;
+    whyUsCards[indexWhyUs].classList.add("active");
+}, 4000);
+
+$(document).ready(_ => {
+    $(".owl-carousel").owlCarousel();
+    partnersDots = document.querySelectorAll('.owl-carousel-partners .owl-dots button.owl-dot');
+    displaySections(partnerCards, indexPartners, partnersDots);
+});
+$('.owl-carousel.owl-carousel-partners').owlCarousel({
+    margin: 10,
+    rtl: false,
+    nav: false,
+    loop: true,
+    dots: true,
+    center: true,
+    autoplay: false,
+    mouseDrag: false,
+    smartSpeed: 500,
+    autoplayTimeout: 5000,
+    responsive:{
+        0:{
+            items: 1
+        }
+    }
+});
+$('.owl-carousel.owl-carousel-about-us').owlCarousel({
+    margin: 0,
+    nav: true,
+    rtl: false,
+    loop: true,
+    dots: false,
+    center: true,
+    autoplay: true,
+    mouseDrag: false,
+    smartSpeed: 1000,
+    autoplayTimeout: 10000,
+    responsive:{
+        0:{
+            items: 1
+        },
+        768:{
+            items: 2
+        }
+    }
+});
+
+function displaySections(items, index, dots){
+    items.forEach(card => {
+        card.classList.remove("active");
+        items[index].classList.add("active");
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+            dots[index].classList.add('active');
+            dots[index].click();
+        });
+    });
+};
+partnerCards.forEach((card, index) => {
+    card.addEventListener("click", _ => displayCurrentItem(index, 'partners'))
+});
+function displayCurrentItem(index, label){
+    if(label === 'partners'){
+        clearInterval(partnersInterval);
+        indexPartners = index;
+        displaySections(partnerCards, indexPartners, partnersDots);
+        partnersInterval = setClearInterval('partners', partnerCards, 4000);
+    } else if(label === 'services'){
+        clearInterval(servicesInterval);
+        indexServices = index;
+        dispalyServices();
+        servicesInterval = setClearInterval('services', services, 6000);
+    } else if(label === 'companies'){
+        clearInterval(companiesInterval);
+        indexCompanies = index;
+        displayCompanies();
+        companiesInterval = setClearInterval('companies', companies, 8000);
+    } else if(label === 'objectives'){
+        clearInterval(objectivesInterval);
+        indexObjectives = index;
+        displayObjectives();
+        objectivesInterval = setClearInterval('objectives', objectives, 4000);
+    }
+};
+function setClearInterval(label, data, duration) {
+    return setInterval(_ => {
+        if(label === 'partners'){
+            indexPartners = indexPartners < partnerCards.length - 1 ? indexPartners + 1 : 0;
+            displaySections(partnerCards, indexPartners, partnersDots);
+        } else if(label === 'services'){
+            indexServices = indexServices < data.length - 1 ? indexServices + 1 : 0;
+            dispalyServices();
+        } else if(label === 'companies'){
+            indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
+            displayCompanies();
+        } else if(label === 'objectives'){
+            indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
+            displayObjectives();
+        }
+    }, duration);
+}
+
 dispalyServices();
 displayCompanies();
 displayObjectives();
-
-function displayPartners(){
-    let content = "";
-    for (let i = 0; i < partners.length; i++) {
-        if(i < 2){
-            content += `
-                <div class="col-12 col-sm-6">
-                    <div onclick="displayCurrentItem(${i}, 'partners')" class="partner-card ${i === indexPartners ? 'active' : ''} d-flex align-items-center justify-content-center">
-                        <img loading="lazy" src="${partners[i].logo}" alt="D4Ds">
-                    </div>
-                </div>
-            `
-        } else {
-            content += `
-                <div class="col-12 col-sm-4">
-                    <div onclick="displayCurrentItem(${i}, 'partners')" class="partner-card ${i === indexPartners ? 'active' : ''} d-flex align-items-center justify-content-center">
-                        <img loading="lazy" src="${partners[i].logo}" alt="D4Ds">
-                    </div>
-                </div>
-            `
-        }
-    }
-    document.getElementById('partners-logos').innerHTML = content;
-    document.getElementById('partners-description').innerHTML = partners[indexPartners].description;
-};
 function dispalyServices(){
     let content = "";
     for (let i = 0; i < services.length; i++) {
@@ -281,77 +357,6 @@ function displayObjectives(){
     }
     document.querySelector('#objectives .row').innerHTML = content;
 };
-
-let partnersInterval = setClearInterval('partners', partners, 4000);
-let servicesInterval = setClearInterval('services', services, 6000);
-let companiesInterval = setClearInterval('companies', companies, 8000);
-let objectivesInterval = setClearInterval('objectives', objectives, 4000);
-function setClearInterval(label, data, duration) {
-    return setInterval(_ => {
-        if(label === 'partners'){
-            indexPartners = indexPartners < data.length - 1 ? indexPartners + 1 : 0;
-            displayPartners();
-        } else if(label === 'services'){
-            indexServices = indexServices < data.length - 1 ? indexServices + 1 : 0;
-            dispalyServices();
-        } else if(label === 'companies'){
-            indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
-            displayCompanies();
-        } else if(label === 'objectives'){
-            indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
-            displayObjectives();
-        }
-    }, duration);
-}
-function displayCurrentItem(index, label){
-    if(label === 'partners'){
-        clearInterval(partnersInterval);
-        indexPartners = index;
-        displayPartners();
-        partnersInterval = setClearInterval('partners', partners, 4000);
-    } else if(label === 'services'){
-        clearInterval(servicesInterval);
-        indexServices = index;
-        dispalyServices();
-        servicesInterval = setClearInterval('services', services, 6000);
-    } else if(label === 'companies'){
-        clearInterval(companiesInterval);
-        indexCompanies = index;
-        displayCompanies();
-        companiesInterval = setClearInterval('companies', companies, 8000);
-    } else if(label === 'objectives'){
-        clearInterval(objectivesInterval);
-        indexObjectives = index;
-        displayObjectives();
-        objectivesInterval = setClearInterval('objectives', objectives, 4000);
-    }
-};
-
-$(document).ready(_ => $(".owl-carousel").owlCarousel());
-$('.owl-carousel.owl-carousel-about-us').owlCarousel({
-    margin: 0,
-    nav: true,
-    rtl: false,
-    loop: true,
-    dots: false,
-    center: true,
-    autoplay: true,
-    mouseDrag: false,
-    smartSpeed: 1000,
-    autoplayTimeout: 10000,
-    responsive:{
-        0:{
-            items: 1
-        },
-        768:{
-            items: 2
-        }
-    }
-});
-
-const myModal = document.getElementById('myModal');
-const myInput = document.getElementById('myInput');
-if (myModal) myModal.addEventListener('shown.bs.modal', () => myInput.focus());
 
 function hideError(errorElement) {
     document.getElementById(errorElement).textContent = "";
