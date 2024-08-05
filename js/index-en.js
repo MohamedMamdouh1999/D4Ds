@@ -1,29 +1,3 @@
-const services = [
-    {
-        id: 1,
-        title: 'Data<br>Consulting',
-        subtitle: 'Data Consulting Services',
-        description: "D4Ds distinguishes itself by having a team of highly skilled data consultants. Offering tailored data consulting services that meet each client's specific needs and challenges."
-    },
-    {
-        id: 2,
-        title: 'Digital<br>Transformation',
-        subtitle: 'Digital Transformation',
-        description: "Providing comprehensive digital transformation services that encompass not only data but also processes, technology & organizational culture. Also, Ensuring seamless integration of digital technologies into all client's business."
-    },
-    {
-        id: 3,
-        title: 'Data<br>Technologies',
-        subtitle: 'Data Technologies',
-        description: "D4Ds distinguishes itself by having a team of highly skilled data consultants. Offering tailored data consulting services that meet each client's specific needs and challenges."
-    },
-    {
-        id: 4,
-        title: 'Data<br>Consulting',
-        subtitle: 'Data Consulting Services',
-        description: "D4Ds distinguishes itself by having a team of highly skilled data consultants. Offering tailored data consulting services that meet each client's specific needs and challenges."
-    },
-];
 const companies = [
     {
         id: 1,
@@ -115,6 +89,7 @@ const objectives = [
 
 const whyUsCards = document.querySelectorAll('.info-card');
 const partnerCards = document.querySelectorAll('.partner-card');
+const serviceCards = document.querySelectorAll('.service');
 
 let partnersDots = [];
 
@@ -125,7 +100,7 @@ let indexCompanies = 0;
 let indexObjectives = 0;
 
 let partnersInterval = setClearInterval('partners', partnerCards, 5000);
-let servicesInterval = setClearInterval('services', services, 6000);
+let servicesInterval = setClearInterval('services', serviceCards, 6000);
 let companiesInterval = setClearInterval('companies', companies, 8000);
 let objectivesInterval = setClearInterval('objectives', objectives, 4000);
 
@@ -163,6 +138,7 @@ $(document).ready(_ => {
     $(".owl-carousel").owlCarousel();
     partnersDots = document.querySelectorAll('.owl-carousel-partners .owl-dots button.owl-dot');
     displaySections(partnerCards, indexPartners, partnersDots);
+    displaySections(serviceCards, indexServices, []);
 });
 $('.owl-carousel.owl-carousel-partners').owlCarousel({
     margin: 10,
@@ -216,6 +192,9 @@ function displaySections(items, index, dots){
 partnerCards.forEach((card, index) => {
     card.addEventListener("click", _ => displayCurrentItem(index, 'partners'))
 });
+serviceCards.forEach((card, index) => {
+    card.addEventListener("click", _ => displayCurrentItem(index, 'services'))
+});
 function displayCurrentItem(index, label){
     if(label === 'partners'){
         clearInterval(partnersInterval);
@@ -225,8 +204,8 @@ function displayCurrentItem(index, label){
     } else if(label === 'services'){
         clearInterval(servicesInterval);
         indexServices = index;
-        dispalyServices();
-        servicesInterval = setClearInterval('services', services, 6000);
+        displaySections(serviceCards, indexServices, []);
+        servicesInterval = setClearInterval('services', serviceCards, 6000);
     } else if(label === 'companies'){
         clearInterval(companiesInterval);
         indexCompanies = index;
@@ -245,8 +224,8 @@ function setClearInterval(label, data, duration) {
             indexPartners = indexPartners < partnerCards.length - 1 ? indexPartners + 1 : 0;
             displaySections(partnerCards, indexPartners, partnersDots);
         } else if(label === 'services'){
-            indexServices = indexServices < data.length - 1 ? indexServices + 1 : 0;
-            dispalyServices();
+            indexServices = indexServices < serviceCards.length - 1 ? indexServices + 1 : 0;
+            displaySections(serviceCards, indexServices, []);
         } else if(label === 'companies'){
             indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
             displayCompanies();
@@ -257,43 +236,8 @@ function setClearInterval(label, data, duration) {
     }, duration);
 }
 
-dispalyServices();
 displayCompanies();
 displayObjectives();
-function dispalyServices(){
-    let content = "";
-    for (let i = 0; i < services.length; i++) {
-        content += `
-            <div onclick="displayCurrentItem(${i}, 'services')" class="service ${i === indexServices ? 'active' : window.innerWidth > 767 ? '' : 'active'}">
-                <h5>${services[i].title}</h5>
-                <div class="service-info">
-                    <h4>${services[i].subtitle}</h4>
-                    <p>${services[i].description}</p>
-                    <ul>
-                        <li class="d-flex align-items-center">
-                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                            <span>Align data strategy with business strategy</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                            <span>Compliance with NDMO requirements</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                            <span>Professional Advice</span>
-                        </li>
-                        <li class="d-flex align-items-center mb-0">
-                            <img loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                            <span>Helps to harness information to drive business insights</span>
-                        </li>
-                    </ul>
-                    <button class="btn-contact-us" type="button" data-bs-toggle="modal" data-bs-target="#contactUs">Request Service</button>
-                </div>
-            </div>
-        `
-    }
-    document.getElementById('services').innerHTML = content;
-};
 function displayCompanies(){
     let logo = "";
     for (let i = 0; i < companies.length; i++) {

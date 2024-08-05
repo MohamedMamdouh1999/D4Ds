@@ -459,10 +459,12 @@ main section {
             font-size: 26px;
             font-weight: 700;
             text-align: center;
+            transition: all 0.3s ease-out;
         }
         .service-info {
             display: none;
             padding-inline: 15px;
+            transition: all 0.3s ease-out;
             h4 {
                 font-size: 24px;
                 font-weight: 700;
@@ -486,7 +488,6 @@ main section {
                 font-size: 18px;
                 font-weight: 500;
                 color: #474747;
-                transition: display 0.1s .2s ease-out;
             }
             ul {
                 margin-block: 8px;
@@ -505,7 +506,6 @@ main section {
                         display: none;
                         font-size: 16px;
                         color: #131313;
-                        transition: display 0.1s .2s ease-out;
                     }
                 }
             }
