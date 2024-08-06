@@ -138,7 +138,8 @@ $(document).ready(_ => {
     $(".owl-carousel").owlCarousel();
     partnersDots = document.querySelectorAll('.owl-carousel-partners .owl-dots button.owl-dot');
     displaySections(partnerCards, indexPartners, partnersDots);
-    displaySections(serviceCards, indexServices, []);
+    if (window.innerWidth < 768) serviceCards.forEach(card => card.classList.add("active"));
+    else displaySections(serviceCards, indexServices, []);
 });
 $('.owl-carousel.owl-carousel-partners').owlCarousel({
     margin: 10,
@@ -189,29 +190,27 @@ function displaySections(items, index, dots){
         });
     });
 };
-partnerCards.forEach((card, index) => {
-    card.addEventListener("click", _ => displayCurrentItem(index, 'partners'))
-});
+partnerCards.forEach((card, index) => card.addEventListener("click", _ => displayCurrentItem(index, 'partners')));
 serviceCards.forEach((card, index) => {
-    card.addEventListener("click", _ => displayCurrentItem(index, 'services'))
+    if (window.innerWidth >= 768) card.addEventListener("click", _ => displayCurrentItem(index, 'services'))
 });
 function displayCurrentItem(index, label){
-    if(label === 'partners'){
+    if (label === 'partners'){
         clearInterval(partnersInterval);
         indexPartners = index;
         displaySections(partnerCards, indexPartners, partnersDots);
         partnersInterval = setClearInterval('partners', partnerCards, 4000);
-    } else if(label === 'services'){
+    } else if (label === 'services'){
         clearInterval(servicesInterval);
         indexServices = index;
         displaySections(serviceCards, indexServices, []);
         servicesInterval = setClearInterval('services', serviceCards, 6000);
-    } else if(label === 'companies'){
+    } else if (label === 'companies'){
         clearInterval(companiesInterval);
         indexCompanies = index;
         displayCompanies();
         companiesInterval = setClearInterval('companies', companies, 8000);
-    } else if(label === 'objectives'){
+    } else if (label === 'objectives'){
         clearInterval(objectivesInterval);
         indexObjectives = index;
         displayObjectives();
@@ -220,16 +219,16 @@ function displayCurrentItem(index, label){
 };
 function setClearInterval(label, data, duration) {
     return setInterval(_ => {
-        if(label === 'partners'){
+        if (label === 'partners'){
             indexPartners = indexPartners < partnerCards.length - 1 ? indexPartners + 1 : 0;
             displaySections(partnerCards, indexPartners, partnersDots);
-        } else if(label === 'services'){
+        } else if (label === 'services' && window.innerWidth >= 768){
             indexServices = indexServices < serviceCards.length - 1 ? indexServices + 1 : 0;
             displaySections(serviceCards, indexServices, []);
-        } else if(label === 'companies'){
+        } else if (label === 'companies'){
             indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
             displayCompanies();
-        } else if(label === 'objectives'){
+        } else if (label === 'objectives'){
             indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
             displayObjectives();
         }
