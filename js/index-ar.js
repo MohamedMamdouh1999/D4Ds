@@ -1,53 +1,3 @@
-const companies = [
-    {
-        id: 1,
-        logo: 'media/images/company-1.svg',
-        title: "MOC",
-        about: "تسعى وزارة التجارة إلى القيام بدور محوري في نمو واستدامة القطاع التجاري في المملكة ومواكبة التغيرات والتطورات المستمرة في التجارة على مستوى العالم. وتهدف الوزارة إلى تعزيز مكانة المملكة الاقتصادية كمركز مفضل للتجارة في الشرق الأوسط وحول العالم. توفير خريطة طريق شاملة ومتكاملة لتحقيق هدفها الطموح المتمثل في قيادة قطاع التجارة السعودي في بيئة عادلة ومحفزة. تتمحور رسالة الوزارة حول الدور الحاسم الذي تلعبه في تعزيز مناخ الأعمال في المملكة من خلال اعتماد وتطوير والإشراف على أنظمة وسياسات قوانين تجارية مرنة وعادلة، فضلاً عن تعزيز التحالفات الاستراتيجية مع مختلف الجهات ذات الصلة. السلطات المحلية والدولية من أجل تعزيز أواصر الثقة بين البائع والعميل. من خلال الالتزام بمنظومة متكاملة من القيم الراسخة التي تؤكد على العدالة، واحترام الحقوق، والإبداع، والعمل الجماعي، وسرعة الاستجابة، والسعي المستمر لتقديم خدمات ذات قيمة مضافة تتجاوز توقعات جميع فئات العملاء، فإنها تساعد لتعظيم مساهمة القطاع التجاري في دعم واستدامة الاقتصاد الوطني"
-    },
-    {
-        id: 2,
-        logo: 'media/images/company-2.svg',
-        title: "MOT",
-        about: "بدأت وزارة السياحة عملياتها في عام 2000، مع التركيز على النمو على المدى الطويل. هدفها الرئيسي هو تنفيذ رؤية المملكة للسياحة، إلى جانب تسهيل التعاون الناجح وتطوير رأس المال البشري الوطني."
-    },
-    {
-        id: 3,
-        logo: 'media/images/company-3.svg',
-        title: "NG",
-        about: "الحرس الوطني هو قوة عسكرية مسلحة تساهم في الدفاع عن أراضي وحدود المملكة العربية السعودية والحفاظ على الأمن والاستقرار الداخلي."
-    },
-    {
-        id: 4,
-        logo: 'media/images/company-4.svg',
-        title: "SBA",
-        about: "هيئة الإذاعة والتلفزيون السعودية هي هيئة حكومية سعودية تتمتع بالشخصية الاعتبارية والاستقلال المالي وتتبع وزارة الإعلام السعودية. وتسعى إلى إيصال رسالة المملكة العربية السعودية إلى كافة المناطق محلياً وعالمياً من خلال الكلمة والصورة، ورفع وتطوير مستوى الأداء الإذاعي والتلفزيوني. ولها عدة قنوات تلفزيونية وإذاعية حكومية ورسمية، وهي القناة السعودية، وقناة SBC، وقناة الذكريات، وقناة الأخبار، والقنوات الرياضية السعودية، وقناة القرآن الكريم، وقناة السنة النبوية. ومن المحطات الإذاعية إذاعة القرآن الكريم، وإذاعة جدة، وإذاعة الرياض، وإذاعة نداء الإسلام، وإذاعة الإذاعة السعودية. والإذاعة السعودية العالمية ."
-    },
-    {
-        id: 5,
-        logo: 'media/images/company-5.svg',
-        title: "MOMRAH",
-        about: "أنشئت وزارة الشؤون البلدية والقروية عام 1395هـ/1975م بموجب المرسوم الملكي رقم (أ/266) وتاريخ 1395/10/8هـ وأنيطت بها مسؤولية التخطيط العمراني لمدن المملكة، وما ويشمل ذلك توفير الطرق والتجهيزات الأساسية وتحسين وتجميل المدن وتطوير المناطق البلدية والقروية بالإضافة إلى إدارة الخدمات اللازمة للمحافظة على نظافة وصحة البيئة في المملكة."
-    },
-    {
-        id: 6,
-        logo: 'media/images/company-6.svg',
-        title: "MOH",
-        about: "منذ تأسيس المملكة العربية السعودية على يد الملك عبد العزيز، كانت الصحة العامة على رأس الأولويات. وفي عام 1925، أنشأ إدارة الصحة العامة في مكة المكرمة، حيث قام ببناء بنية تحتية متينة للرعاية الصحية بالتعاون الدولي. ولإدارة متطلبات الرعاية الصحية المتزايدة، بما في ذلك الحج والعمرة، تم تشكيل مجلس الصحة العامة. وفي عام 1951، تم إنشاء وزارة الصحة بموجب مرسوم ملكي، تحقيقاً لرؤية الملك عبد العزيز لنظام رعاية صحية وطني شامل."
-    },
-    {
-        id: 7,
-        logo: 'media/images/company-7.svg',
-        title: "MRM",
-        about: "تتولى أمانة منطقة المدينة المنورة مسؤولية تقديم الخدمات البلدية بهدف تطوير المنطقة وتحسينها من النواحي العمرانية والاقتصادية والاجتماعية. وفي عام 1401هـ صدر أمر ملكي بتغيير اسم أمانة المدينة إلى “أمانة المدينة المنورة”، وذلك عقب صدور قرار وزاري عام 1398م بتصنيف البلدية فئة ممتازة. تهتم الأمانة بمهام متعددة مثل الحفاظ على النظافة، ومكافحة آفات الصحة العامة، ومراقبة الأنشطة التجارية والتأكد من سلامة الأغذية، بالإضافة إلى صيانة الطرق والإنارة، ووضع لوائح البناء، والإشراف على تقديم الخدمات البلدية لسكان وزوار المدينة المنورة. ."
-    },
-    {
-        id: 8,
-        logo: 'media/images/company-8.svg',
-        title: "MOHRSD",
-        about: "وزارة الموارد البشرية والتنمية الاجتماعية هي الجهة الحكومية المسؤولة عن وضع السياسة العامة لأنظمة العمل والعمال في القطاعين العام والخاص داخل المملكة العربية السعودية، وكذلك كل ما يتعلق بالشؤون الاجتماعية وبرامجها التنموية. والتي تتوافق مع الرؤى والسياسات التي تتبناها حكومة المملكة."
-    }
-];
 const objectives = [
     {
         id: 1,
@@ -90,8 +40,11 @@ const objectives = [
 const whyUsCards = document.querySelectorAll('.info-card');
 const partnerCards = document.querySelectorAll('.partner-card');
 const serviceCards = document.querySelectorAll('.service');
+const companies = document.querySelectorAll('.companies > div');
 
 let partnersDots = [];
+let companiesAboutDots = [];
+let companiesCollaborationDots = [];
 
 let indexWhyUs = 0;
 let indexPartners = 0;
@@ -136,12 +89,15 @@ setInterval(_ => {
 
 $(document).ready(_ => {
     $(".owl-carousel").owlCarousel();
-    partnersDots = document.querySelectorAll('.owl-carousel-partners .owl-dots button.owl-dot');
+    partnersDots = document.querySelectorAll('.owl-partners .owl-dots button.owl-dot');
     displaySections(partnerCards, indexPartners, partnersDots);
     if (window.innerWidth < 768) serviceCards.forEach(card => card.classList.add("active"));
     else displaySections(serviceCards, indexServices, []);
+    companiesAboutDots = document.querySelectorAll('.owl-companies-about .owl-dots button.owl-dot');
+    companiesCollaborationDots = document.querySelectorAll('.owl-companies-collaboration .owl-dots button.owl-dot');
+    displaySections(companies, indexCompanies, companiesAboutDots, companiesCollaborationDots);
 });
-$('.owl-carousel.owl-carousel-partners').owlCarousel({
+$('.owl-carousel-item').owlCarousel({
     margin: 10,
     rtl: true,
     nav: false,
@@ -158,7 +114,25 @@ $('.owl-carousel.owl-carousel-partners').owlCarousel({
         }
     }
 });
-$('.owl-carousel.owl-carousel-about-us').owlCarousel({
+$('.owl-companies-about').owlCarousel({
+    margin: 10,
+    rtl: true,
+    nav: false,
+    loop: true,
+    dots: true,
+    center: true,
+    autoplay: false,
+    mouseDrag: false,
+    animateOut: 'fadeOut',
+    smartSpeed: 500,
+    autoplayTimeout: 5000,
+    responsive:{
+        0:{
+            items: 1
+        }
+    }
+});
+$('.owl-about-us').owlCarousel({
     margin: 0,
     nav: true,
     rtl: true,
@@ -179,7 +153,7 @@ $('.owl-carousel.owl-carousel-about-us').owlCarousel({
     }
 });
 
-function displaySections(items, index, dots){
+function displaySections(items, index, dots, otherDots) {
     items.forEach(card => {
         card.classList.remove("active");
         items[index].classList.add("active");
@@ -188,12 +162,20 @@ function displaySections(items, index, dots){
             dots[index].classList.add('active');
             dots[index].click();
         });
+        if (otherDots) {
+            otherDots.forEach(dot => {
+                dot.classList.remove('active');
+                otherDots[index].classList.add('active');
+                otherDots[index].click();
+            });
+        }
     });
 };
 partnerCards.forEach((card, index) => card.addEventListener("click", _ => displayCurrentItem(index, 'partners')));
 serviceCards.forEach((card, index) => {
     if (window.innerWidth >= 768) card.addEventListener("click", _ => displayCurrentItem(index, 'services'));
 });
+companies.forEach((card, index) => card.addEventListener("click", _ => displayCurrentItem(index, 'companies')));
 function displayCurrentItem(index, label){
     if (label === 'partners'){
         clearInterval(partnersInterval);
@@ -208,7 +190,7 @@ function displayCurrentItem(index, label){
     } else if (label === 'companies'){
         clearInterval(companiesInterval);
         indexCompanies = index;
-        displayCompanies();
+        displaySections(companies, indexCompanies, companiesAboutDots, companiesCollaborationDots);
         companiesInterval = setClearInterval('companies', companies, 8000);
     } else if (label === 'objectives'){
         clearInterval(objectivesInterval);
@@ -227,7 +209,7 @@ function setClearInterval(label, data, duration) {
             displaySections(serviceCards, indexServices, []);
         } else if (label === 'companies'){
             indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
-            displayCompanies();
+            displaySections(companies, indexCompanies, companiesAboutDots, companiesCollaborationDots);
         } else if (label === 'objectives'){
             indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
             displayObjectives();
@@ -235,56 +217,7 @@ function setClearInterval(label, data, duration) {
     }, duration);
 }
 
-displayCompanies();
 displayObjectives();
-function displayCompanies(){
-    let logo = "";
-    for (let i = 0; i < companies.length; i++) {
-        logo += `
-            <div onclick="displayCurrentItem(${i}, 'companies')" class="col-3 col-md d-flex align-items-center justify-content-center ${i === indexCompanies ? 'active' : ''}">
-                <div class="company">
-                    <img class="w-100" loading="lazy" src="${companies[i].logo}" alt="D4Ds">
-                </div>
-            </div>
-        `;
-    }
-    let about = `
-        <div>
-            <h4>عن ${companies[indexCompanies].title}</h4>
-            <hr>
-            <p>${companies[indexCompanies].about}</p>
-        </div>
-    `;
-    let collaboration = `
-        <div>
-            <h4>بالتعاون مع ${companies[indexCompanies].title}</h4>
-            <hr>
-            <p>وقد تعاون أعضاء فريقنا مع ${companies[indexCompanies].title} في جوانب عديدة على النحو التالي:</p>
-            <ul>
-                <li class="d-flex align-items-center">
-                    <img class="ar" loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                    <span>مواءمة استراتيجية البيانات مع استراتيجية العمل في أكثر من 35 مشروعًا مختلفًا في المملكة العربية السعودية</span>
-                </li>
-                <li class="d-flex align-items-center">
-                    <img class="ar" loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                    <span>الامتثال لمتطلبات NDMO مع العديد من المنظمات التي يمكن أن تؤثر على تكنولوجيا العالم الحقيقي</span>
-                </li>
-                <li class="d-flex align-items-center">
-                    <img class="ar" loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                    <span>استشارات احترافية لأكثر من 35 مشروعًا مختلفًا في المملكة العربية السعودية</span>
-                </li>
-                <li class="d-flex align-items-center mb-0">
-                    <img class="ar" loading="lazy" src="media/icons/caret-right.svg" alt="D4Ds">
-                    <span>مواءمة استراتيجية البيانات مع استراتيجية العمل في أكثر من 35 مشروعًا مختلفًا في المملكة العربية السعودية</span>
-                </li>
-            </ul>
-            <button class="btn-contact-us" type="button" data-bs-toggle="modal" data-bs-target="#contactUs">طلب الخدمة</button>
-        </div>
-    `;
-    document.querySelector('.companies').innerHTML = logo;
-    document.querySelector('.about-companies').innerHTML = about;
-    setTimeout(() => document.querySelector('.collaboration-companies').innerHTML = collaboration, 500);
-};
 function displayObjectives(){
     let content = "";
     for (let i = 0; i < objectives.length; i++) {

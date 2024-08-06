@@ -801,7 +801,7 @@ main section {
             color: #1B1B1B;
             text-align: center;
         }
-        .owl-carousel-about-us {
+        .owl-about-us {
             padding-top: 28px;
             background-size: contain;
             background-repeat: no-repeat;
@@ -895,7 +895,7 @@ main section {
                 h4 {
                     font-size: 36px;
                 }
-                .owl-carousel-about-us {
+                .owl-about-us {
                     padding-top: 55px;
                     .owl-stage .owl-item {
                         display: flex;
@@ -958,7 +958,7 @@ main section {
             
         }
         @media screen and (min-width: 1200px) {
-            & .owl-carousel-about-us .owl-stage .owl-item.active.center .about-us-card > img {
+            & .owl-about-us .owl-stage .owl-item.active.center .about-us-card > img {
                 width: 175px;
                 height: 125px;
                 right: -25px;
