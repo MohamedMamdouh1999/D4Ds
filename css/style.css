@@ -904,6 +904,7 @@ main section {
                         justify-content: center;
                         padding-inline: calc((2.01 - 100vw) / 100);
                         .about-us-card {
+                            min-height: 193px;
                             padding: 29px 28px 27px 33px;
                             p {
                                 font-size: 22px;
@@ -924,6 +925,7 @@ main section {
                         &.active.center {
                             width: calc((37.01 * 100vw) / 100) !important;
                             .about-us-card {
+                                min-height: 251px;
                                 padding: 40px 33px 26px 35px;
                                 p {
                                     font-size: 26px;
