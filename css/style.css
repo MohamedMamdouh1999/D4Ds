@@ -693,6 +693,9 @@ main section {
                 font-size: 13px;
                 margin-bottom: 3px;
             }
+            .owl-carousel-item-ar div button {
+                margin-inline-start: 3px;
+            }
         }
         @media screen and (min-width: 992px) {
             & {
