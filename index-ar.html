@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
 <body id="home" class="ar">
-    <nav class="d-none d-lg-block">
+    <nav class="d-none d-lg-block bg-transparent">
         <div class="container">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="nav-info d-flex align-items-center">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg bg-white shadow sticky-top d-block d-lg-none">
+    <nav class="navbar navbar-expand-lg bg-white shadow fixed-top d-block d-lg-none">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img loading="lazy" src="media/images/logo.svg" alt="D4Ds">
@@ -92,15 +92,18 @@
             </div>
         </div>
     </nav>
-    <header>
-        <div class="container text-center">
-            <h1 class="text-center">شريكك</h1>
-            <p>في تعزيز العمليات التجارية من خلال الإدارة الفعالة للبيانات.</p>
-            <button class="btn-contact-us mx-auto" type="button" data-bs-toggle="modal" data-bs-target="#contactUs">اتصل بنا</button>
-            <div class="w-50 mx-auto position-relative">
-                <img class="w-100 position-relative" loading="lazy" src="media/images/header-img.png" alt="D4Ds">
+    <header class="d-flex align-items-end justify-content-center">
+        <video class="d-none d-md-block" autoplay muted loop>
+            <source src="media/wave-animation.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <article class="text-center">
+            <div class="container">
+                <h1><span>شريكك</span> في تعزيز العمليات التجارية من خلال إدارة فعالة للبيانات.</h1>
+                <button class="btn-contact-us mx-auto" type="button" data-bs-toggle="modal" data-bs-target="#contactUs">اتصل بنا</button>
             </div>
-        </div>
+        </article>
+        <img loading="lazy" src="media/icons/scroll-icon.gif" alt="D4Ds">
     </header>
     <main dir="rtl">
         <section id="why-us">
