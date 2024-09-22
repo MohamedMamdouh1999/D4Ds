@@ -23,6 +23,7 @@ const whyUsCards = document.querySelectorAll('.info-card');
 const partnerCards = document.querySelectorAll('.partner-card');
 const serviceCards = document.querySelectorAll('.service');
 const companies = document.querySelectorAll('.companies > div');
+const aboutCompanies = document.querySelectorAll('.about-companies-sm > div');
 const objectivesCards = document.querySelectorAll('#objectives .row > div');
 
 let partnersDots = [];
@@ -215,6 +216,12 @@ companies.forEach((card, index) => card.addEventListener("click", _ => displayCu
 
 objectivesCards.forEach((card, index) => card.addEventListener("click", _ => displayCurrentItem(index, 'objectives')));
 
+displayAboutCompanies(indexCompanies);
+function displayAboutCompanies(index) {
+    aboutCompanies.forEach(item => item.classList.add("d-none"));
+    aboutCompanies[index].classList.replace("d-none", "d-block");
+}
+
 function displayCurrentItem(index, label){
     if (label === 'partners'){
         clearInterval(partnersInterval);
@@ -230,6 +237,7 @@ function displayCurrentItem(index, label){
         clearInterval(companiesInterval);
         indexCompanies = index;
         displaySections(companies, indexCompanies, companiesAboutDots, companiesCollaborationDots);
+        displayAboutCompanies(indexCompanies);
         companiesInterval = setClearInterval(label, companies, 8000);
     } else if (label === 'objectives'){
         clearInterval(objectivesInterval);
@@ -250,6 +258,7 @@ function setClearInterval(label, data, duration) {
         } else if (label === 'companies'){
             indexCompanies = indexCompanies < data.length - 1 ? indexCompanies + 1 : 0;
             displaySections(data, indexCompanies, companiesAboutDots, companiesCollaborationDots);
+            displayAboutCompanies(indexCompanies);
         } else if (label === 'objectives'){
             indexObjectives = indexObjectives < data.length - 1 ? indexObjectives + 1 : 0;
             displaySections(data, indexObjectives, []);
